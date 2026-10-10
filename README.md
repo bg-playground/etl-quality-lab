@@ -69,13 +69,27 @@ A fictional retail company loads completed orders into a reporting warehouse. It
 
 **Begin with [Lab 01: reconciliation](labs/01-reconciliation/README.md).** For teaching tips, see the [instructor guide](docs/instructor-guide.md).
 
+## Lab 02 — Transformation and business rules (v0.2)
+
+A second, independently runnable lesson demonstrates **technical execution versus business correctness** using discount calculations, decimal precision, status normalization, invalid input handling, and an intentionally broken truncation rule.
+
+- [Start Lab 02](labs/02-business-rules/README.md)
+- [Reviewed transformation contract](docs/transformation-contract.md)
+- [Synthetic defect investigation TR-002](evidence/defect-examples/TR-002.md)
+
+```bash
+python -m pytest -q tests/test_business_rules.py
+```
+
+The test suite expects to *catch* the seeded bug rather than running broken code in the normal pipeline. Lab 01 is preserved and still runs in the full suite.
+
 ## Scope and limitations
 
-This is a v0.1 teaching lab, not a production ETL framework. It deliberately omits orchestration, incremental loading, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
+This is an incremental teaching lab, not a production ETL framework. It deliberately omits orchestration, incremental loading, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
 
 ## Next lessons (not implemented)
 
-Transformation rule testing; schema drift and null integrity; incremental reruns and idempotency; misleading joins and duplicated revenue; and independent evidence packaging for release review.
+Schema drift and null integrity; incremental reruns and idempotency; misleading joins and duplicated revenue; and independent evidence packaging for release review.
 
 ## License
 
