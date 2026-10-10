@@ -83,13 +83,28 @@ python -m pytest -q tests/test_business_rules.py
 
 The test suite expects to *catch* the seeded bug rather than running broken code in the normal pipeline. Lab 01 is preserved and still runs in the full suite.
 
+## Lab 03 — Data integrity and schema drift (v0.3)
+
+A standalone case study demonstrates how a consumer data contract distinguishes **compatible additive schema evolution** from **breaking schema changes**, while detecting duplicate keys, null required values, orphan relationships, and invalid amount types.
+
+- [Start Lab 03](labs/03-integrity-and-schema-drift/README.md)
+- [Data integrity contract](docs/integrity-contract.md)
+- [Instructor notes](docs/instructor-guide-v0.3.md)
+- [Investigation evidence INT-003](evidence/defect-examples/INT-003.md)
+
+```bash
+python -m pytest -q tests/test_integrity.py
+```
+
+Controlled negative fixtures are asserted as expected failures: the full CI suite stays green only when checks detect the violations. Labs 01 and 02 remain intact.
+
 ## Scope and limitations
 
 This is an incremental teaching lab, not a production ETL framework. It deliberately omits orchestration, incremental loading, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
 
 ## Next lessons (not implemented)
 
-Schema drift and null integrity; incremental reruns and idempotency; misleading joins and duplicated revenue; and independent evidence packaging for release review.
+Incremental reruns and idempotency; misleading joins and duplicated revenue; and independent evidence packaging for release review.
 
 ## License
 
