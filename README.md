@@ -98,13 +98,28 @@ python -m pytest -q tests/test_integrity.py
 
 Controlled negative fixtures are asserted as expected failures: the full CI suite stays green only when checks detect the violations. Labs 01 and 02 remain intact.
 
+## Lab 04 — Incremental loads and recovery (v0.4)
+
+A standalone exercise on **idempotent replay, version-aware upserts, atomic rollback, late-arriving records, and final-state reconciliation**. It uses the Python-standard-library SQLite engine to remain approachable.
+
+- [Start Lab 04](labs/04-incremental-recovery/README.md)
+- [Recovery contract](docs/incremental-contract.md)
+- [Instructor notes](docs/instructor-guide-v0.4.md)
+- [Incident analysis INC-004](evidence/defect-examples/INC-004.md)
+
+```bash
+python -m pytest -q tests/test_incremental.py
+```
+
+All earlier labs remain independently runnable and their acceptance criteria are preserved.
+
 ## Scope and limitations
 
-This is an incremental teaching lab, not a production ETL framework. It deliberately omits orchestration, incremental loading, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
+This is an incremental teaching lab, not a production ETL framework. It deliberately omits orchestration, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
 
 ## Next lessons (not implemented)
 
-Incremental reruns and idempotency; misleading joins and duplicated revenue; and independent evidence packaging for release review.
+Misleading joins and duplicated revenue; and independent evidence packaging for release review.
 
 ## License
 
