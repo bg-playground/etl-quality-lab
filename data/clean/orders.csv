@@ -1,0 +1,5 @@
+order_id,customer_id,quantity,unit_price,status
+O-1001,C-01,2,19.95,PAID
+O-1002,C-02,1,60.10,PAID
+O-1003,C-03,3,10.00,CANCELLED
+O-1004,C-04,4,5.00,PAID

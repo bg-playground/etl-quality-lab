@@ -1,0 +1,1 @@
+"""Small, intentionally transparent ETL demo."""
