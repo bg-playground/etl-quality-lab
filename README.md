@@ -113,13 +113,28 @@ python -m pytest -q tests/test_incremental.py
 
 All earlier labs remain independently runnable and their acceptance criteria are preserved.
 
+## Lab 05 — Advanced incident investigation capstone (v0.5)
+
+A green ETL run produced a reporting total of **$75.00** against an independently approved **$60.00**. Investigate duplicate dimension rows, repeated fact output and an unapplied discount, distinguishing observations from root-cause hypotheses.
+
+- [Start capstone](labs/05-incident-capstone/README.md)
+- [Approved business and quality contract](docs/capstone-contract.md)
+- [Sample investigation CAP-005](evidence/defect-examples/CAP-005.md)
+- [Instructor notes](docs/instructor-guide-v0.5.md)
+
+```bash
+python -m pytest -q tests/test_capstone.py
+```
+
+The full suite continues to validate all five labs. The capstone is a controlled evidence-analysis exercise, not an assertion that the original faulty ETL implementation is available.
+
 ## Scope and limitations
 
 This is an incremental teaching lab, not a production ETL framework. It deliberately omits orchestration, distributed compute, live cloud credentials, and large-dataset performance. `data/expected/fact_orders.csv` is authored independently of the ETL logic to avoid a circular oracle. The demonstration source is CSV for a fast start; additional source formats are future lessons. BGSTM is demonstrated as a methodology, not required as a software dependency.
 
 ## Next lessons (not implemented)
 
-Misleading joins and duplicated revenue; and independent evidence packaging for release review.
+Independent evidence packaging for release review and optional production-grade extensions.
 
 ## License
 
