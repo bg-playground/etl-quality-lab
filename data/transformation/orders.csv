@@ -1,0 +1,5 @@
+order_id,quantity,unit_price,discount_pct,status
+T-2001,1,19.99,10, paid
+T-2002,2,3.335,0,PAID
+T-2003,1,80.00,25,Pending
+T-2004,3,10.00,20, PAID 
